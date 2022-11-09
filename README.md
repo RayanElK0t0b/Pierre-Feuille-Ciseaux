@@ -1,1 +1,1 @@
-# Rock Paper Cisors en FLARP
+# Rock Paper Cisors

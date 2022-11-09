@@ -43,34 +43,41 @@ print("The initial assertion is "+str(assertionFinaleUn))
 
 # FONCTION
 
+
+# Définition de la fonction retournerSixPlusX qui additione 6 et 3
 def retournerSixPlusTrois():
     # Calcul de 6 + 3
     return 6 + 3
 
 
-def retournerSixPlusX(x, y):
+# Définition de la fonction retournerSixPlusX qui additione 6 et x, elle prend en paramètre x 
+def retournerSixPlusX(x):
     # Calcul de x + y
-    return x + y
+    return x + 6
 
 
 # EXERCICES
 
 
+# Définition de la fonction add qui additionne x et y, elle prend en paramètre x et y
 def add(x, y):
     # Addition de x par y
     return x + y
 
 
+# Définition de la fonction sub qui soustraie y à x, elle prend en paramètre x et y
 def sub(x, y):
     # Soustraction de x par y
     return x - y
 
 
+# Définition de la fonction multiply qui multiplie x par y, elle prend en paramètre x et y
 def multiply(x, y):
     # Multiplication de x par y
     return x * y
 
 
+# Définition de la fonction divide qui divise x par y, elle prend en paramètre x et y
 def divide(x, y):
     # Si y = 0, impossible de diviser x par y
     if y == 0:
@@ -84,11 +91,13 @@ def divide(x, y):
         return x / y
 
 
+# Définition de la fonction modulo qui donne le reste de la division euclidienne de x par y, elle prend en paramètre x et y
 def modulo(x, y):
     # Reste de la division euclidienne de x par y
     return x % y
 
 
+# Définition du salaire net, elle prend en papramètre le salaire brut et le taux d'imposition
 def salaireNet(salaireBrut, feesPercentage):
     # Calcul du pourcentage d'impôts
     fees = salaireBrut * (feesPercentage / 100)
@@ -96,6 +105,7 @@ def salaireNet(salaireBrut, feesPercentage):
     return salaireBrut - fees
 
 
+# Définition de la fonction calculSalaireParSeconde qui calcul le salaire par seconde par an, qui prend en paramètre salaireHoraire, heureParJourOuvrable et jourOuvrable
 def calculSalaireParSeconde(salaireHoraire, heureParJourOuvrable, jourOuvrable):
     # Calcul du salaire annuel
     salaireAnnuel = salaireHoraire * heureParJourOuvrable * jourOuvrable
@@ -182,6 +192,7 @@ else:
 
 #Définition de la fonction Jouer Un Tour
 def jouerUnTour() :
+    # Affichage du message indiquant à quel tour on est
     print("Vous êtes au "+str(tour)+" tour.")
 
 # Le numéro du tour initial est 0
@@ -203,7 +214,6 @@ while tour <= 5 :
 # Importation les librairies string et random
 import string
 import random
-from unittest import result
 
 # Assignation d'un caractère aléatoire à une variable caractère mystère
 caractereMystere = random.choice(string.ascii_letters)
@@ -236,9 +246,9 @@ age = 23
 # Affichage de son prénom et de son nom sans un espace
 print(prenom+nom)
 # Affichage de son prénom et de son nom avec un espace
-print(prenom+""+nom)
+print(prenom+" "+nom)
 # Affichage du prénom, du nom et de l'âge avec des espaces
-print(prenom+""+nom+""+str(age))
+print(prenom+" "+nom+" "+str(age))
 
 # Exercice Tableau / Listes
 
@@ -255,15 +265,19 @@ len(tablo) # Renvoie le nombre d'éléments qu'il y a dans le tableau
 
 # Tableau avec plusieur type de données
 tableauMultiType = ["RayouyouChad", True, tablo, 4>2, None]
-# Tableau Unidimensionnel
+# Tableau Unidimenssionnel
 tableauDimUn = [0, 1, 2, 3]
-# Tableau Unidimensionnel
+# Tableau Unidimenssionnel
 tableauDimDeux = [0, 1, 21, 3]
-# Tableau Bidimensionel
+# Tableau Bidimenssionel
 tableauMultiDim = [tableauDimUn, tableauDimDeux]
+# Récupération de l'élément d'index 1 de tableauMultiDim, et dans cet élément (qui est une liste), on récupère l'élément d'index 2
 tableauMultiDim[1][2] # Renvoie 21
 
+# Création d'un dictionnaire
 tableauCleVal = {"Cle" : "Valeur"}
+
+# Récupération de la "valeur" associée à "clé"
 tableauCleVal["Cle"] # Renvoie "Valeur"
 
 # foreach key : valeur in tableauCLeVal
@@ -276,20 +290,24 @@ tableauCleVal["Cle"] # Renvoie "Valeur"
 
 # Déclaration des chaînes de caractère
 
+# Création de la fonction concatenate quiu concatene la chaîne 1 et la chaîne 2 de caractère
 def concatenate(chaineUn, chaineDeux):
     # Concatenation et affichage
-    print(chaineUn+", "+chaineDeux)
+    result = (str(chaineUn)+", "+str(chaineDeux))
+    # Retourner result
+    return result
+    
+# Appel de concatenate pour Rayouyou et Chad
+concatenate("Rayouyou", "Chad")
 
 
 # Exercice 2
 # Faire une fonction qui itere sur tous les index d'un tableau renvoyant une chaine de caractere avec l'ensembles des occuration d'un chiffre 
 # Example : Pour le tableau [0,1,1,1,0,1,1,0,1] -- fonction(tableau,0) doit renvoyer "0, 4, 7". N'hésitez pas a implémenter la première fonction.
 
-# Création du tableau
-tableau=[1,2,3,5,1,3,2,2,1,5,2,1,3,2,5,1,2,3,1,2,3,2,3,3,1]
-
+# Création de la fonction explore qui prend un tableau et une valeur recherchée en paramètre
 def explore(tableau, valeurRecherche):
-    #Création d'un string vide
+    # Création d'un string vide
     resultat = ""
     # Pour chaque élément du tableau
     for i in range(len(tableau)):
@@ -298,32 +316,35 @@ def explore(tableau, valeurRecherche):
             # Alors, le rajouter avec "' " à la chaine de caractère finale
             resultat = resultat + str(tableau[i]) + ", "
     # Suppression des deux dernières caractères qui sont ", " du string final
-    resultat[:-2]
+    resultat = resultat[:-2]
     # Affichage du résultat
     print(resultat)
+
+# Création du tableau 
+tableau=[1,2,3,5,1,3,2,2,1,5,2,1,3,2,5,1,2,3,1,2,3,2,3,3,1] 
+# Appel de explore pour tableau et 5
+explore(tableau, 5)
 
 
 # Exercice 3
 # Faire une fonction afficher un message
 
+# Définition de la fonction affichage un messageType
 def affichage(messageType):
     # Convertion du message en string
     message = str(messageType)
     # Affichage du message
     print(message)
 
+# Appel de la fonction avec GigaChad
+affichage("GigaChad")
+
 
 # Exercice 4
 # Tel que
-listeUtilisateur = {
-    "Rayouyou" : "motdepasse",
-    "Michel" : "password",
-    "Toto" : "12345",
-    "JhonDoe" : "azerty"
-}
 # Ecrivez la fonction login(userName, password, listUser) permettant d'afficher un message de connexion si  le combo user/passeword est bon.
 
-
+# Définition de la fonction login qui prend userName, password et listUser en paramètre
 def login(userName, password, listUser):
     # Pour toutes les clés de listUser
     for c in listUser:
@@ -335,6 +356,57 @@ def login(userName, password, listUser):
             return
     # Si on ne sort pas de la fonction, afficher ce message d'erreur
     print("Nom d'utilisateur ou mot de passe incorrect !")
+
+# Création d'une liste d'Utilisateur
+listeUtilisateur = {
+    "Rayouyou" : "motdepasse",
+    "Michel" : "password",
+    "Toto" : "12345",
+    "JhonDoe" : "azerty"
+}
+
+# Appel de login pour Toto, 12345 et listeUtilisateur
+login("Toto", "12345", listeUtilisateur)
+# Appel de login pour Michel1 azerty et listeUtilisateur
+login("Michel", "azerty", listeUtilisateur)
+
+
+# Exercice 2 CORRECTION
+# Faire une fonction qui itere sur tous les index d'un tableau renvoyant une chaine de caractere avec l'ensembles des occuration d'un chiffre 
+# Example : Pour le tableau [0,1,1,1,0,1,1,0,1] -- fonction(tableau,0) doit renvoyer "0, 4, 7". N'hésitez pas a implémenter la première fonction.
+
+# Création du tableau
+tableau=[1,2,3,5,1,3,2,2,1,5,2,1,3,2,5,1,2,3,1,2,3,2,3,3,1]
+
+#Definir une fonction qui prend une liste tableau et une variable x quelquonque
+def exploreCorrection(tableau, valeurRecherche):
+    #Initialisation i a 0
+    i = 0
+    #On détermine le firstTurn a True
+    firstTurn = True
+    #Definir resultat en tant que string vide
+    resultat = ""
+    #Tant que i est inferieur a la longueur de tableau
+    while i < len(tableau):
+        #Alors si l'element d'index i est egal a x
+        if tableau[i] == valeurRecherche:
+            strI = str(i)
+            # Alors si je suis au premier tour ( firstTurn = True )
+            if firstTurn:
+                # Alors j'assigne str(i) à chaîne de résultat
+                resultat = strI
+                # On passe firstTurn à False
+                firstTurn = False
+            # On assigne à resultat la fonction concatWithComma(chaineResultat, str(i))
+            else:
+                resultat = concatenate(resultat, strI)
+        #On incremente i de 1
+        i = i + 1
+    # Retourner resultat
+    return resultat
+    
+# Appel et affichage de exploreCorrction avec tableau et 3 et stockage dans babouche
+print(exploreCorrection(tableau, 3))
 
 
 # FIN
