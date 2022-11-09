@@ -81,7 +81,7 @@ def multiply(x, y):
 def divide(x, y):
     # Si y = 0, impossible de diviser x par y
     if y == 0:
-        # Alors afficher un message d'erreur 
+        # Alors afficher un message d'erreur
         print("Vous ne pouvez pas diviser par 0 !")
         # Et on ne renvoie rien
         return
@@ -180,7 +180,7 @@ if nbPersonne == 1 :
 elif nbPersonne == 2:
     #Elles peuvent rentrer mais il vaut mieux se séparer si possible
     print("Vous rentrez mais séparez vous si possible")
-# Si les personnes sont 3 ou plus 
+# Si les personnes sont 3 ou plus
 else:
     #Elles ne peuvent pas rentrer
     print("Vous ne rentrez pas")
@@ -236,7 +236,7 @@ caractereGuess = input()
 print("Oui ! Le caracter mystère est : " + caractereGuess)
 
 
-# Concaténation 
+# Concaténation
 
 # Informations de la personne concernée
 prenom = "Rayouyou"
@@ -252,7 +252,7 @@ print(prenom+" "+nom+" "+str(age))
 
 # Exercice Tableau / Listes
 
-# On créé une liste 
+# On créé une liste
 tablo = [0,10,15,5,14,7,6,3,4,8,4,9,5,1,7,5,2,1,8,4,4,6,8]
 
 # Pour récupérer 15 je prebds dans le tableau l'index 3 - 1 parce que le premier index est 0
@@ -296,7 +296,7 @@ def concatenate(chaineUn, chaineDeux):
     result = (str(chaineUn)+", "+str(chaineDeux))
     # Retourner result
     return result
-    
+
 # Appel de concatenate pour Rayouyou et Chad
 concatenate("Rayouyou", "Chad")
 
@@ -320,8 +320,8 @@ def explore(tableau, valeurRecherche):
     # Affichage du résultat
     print(resultat)
 
-# Création du tableau 
-tableau=[1,2,3,5,1,3,2,2,1,5,2,1,3,2,5,1,2,3,1,2,3,2,3,3,1] 
+# Création du tableau
+tableau=[1,2,3,5,1,3,2,2,1,5,2,1,3,2,5,1,2,3,1,2,3,2,3,3,1]
 # Appel de explore pour tableau et 5
 explore(tableau, 5)
 
@@ -404,7 +404,7 @@ def exploreCorrection(tableau, valeurRecherche):
         i = i + 1
     # Retourner resultat
     return resultat
-    
+
 # Appel et affichage de exploreCorrction avec tableau et 3 et stockage dans babouche
 print(exploreCorrection(tableau, 3))
 

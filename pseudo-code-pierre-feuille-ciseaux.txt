@@ -1,26 +1,78 @@
-# PSEUDO CODE DU PIERRE FEUILLE CISEAUX 
+# PSEUDO CODE PIERRE FEUILLE CISEAUX
 
-# Définition d'une fonction pierreFeuilleCiseaux qui prend en paramètre le nombre de round a gagner (totalRound) par joueur par partie et le nombre de points nécessaires pour 
-# gagner un round (totalPoints) 
-    # Initialisation du compteur de rounds gagné du joueur 1 (roundsJoueurUn) à 0
-    # Initialisation du compteur de rounds gagné du joueur 2 (roundsJoueurDeux) à 0
-    # Initialisation du compteur de points du joueur 1 (pointsJoueurUn) à 0
-    # Initialisation du compteur de points du joueur 2 (pointsJoueurDeux) à 0
-    # Initialisation du compteur de rounds de la partie (roundNumber) à 0
-    # Création d'un int correspondant à l'ID du coup joué par le joueur (coupJoueurID)
-    # Affichage du message "DÉBUT DE LA PARTIE"
-    # Saut d'une ligne
-    # Tant que les compteurs de rounds du joueur 1 (roundsJoueurUn) ET du joueur 2 (roundsJoueurDeux) sont infèrieurs aux nombres de rounds necessaires pour gagner 
-    la partie (totalRound)
-        # Alors ajout de 1 round au compteur de rounds de la partie (roundNumber)
-        # Concatenation et affichage de "ROUND " et du compteur de rounds de la partie (roundNumber) qu'on converti en str
-        # Saut d'une ligne
-        # Tant que les compteurs de points du joueur 1 (pointsJoueurUn) ET du joueur 2 (pointsJoueurDeux) sont infèrieurs aux nombres de points necessaires pour 
-        # gagner un round (totalPoints)
-            # Affichage du message "Quel coup voulez-vous jouer : Pierre, Feuille ou Ciseaux ?"
-            # Demande au joueur et affichage du message "Votre coup : "
-            # Si le joueur joue "Pierre"
-                # Alors l'ID du coup joué par le joueur (coupJoueurID) vaut 0 
-
-
-    
+# On définie une fonction pierreFeuilleCiseaux qui prend en paramètre le nombre de rounds voulu pour la victoire ainsi que le nombre de points voulu pour gagner un round
+    # On initialise le nombre de rounds gagnés par le joueur à 0
+    # On initialise le nombre de rounds gagnés par l'ordinateur à 0
+    # On initialise le nombre de points du joueur à 0
+    # On initialise le nombre de points de l'ordinateur à 0
+    # On initialise le numéro du round à 0
+    # On définie un booléan qui nous dis si le coup du joueur est valable ou non, le joueur n'ayant pas encore jouer, il est faux
+    # Affichage du message "DÉBUT DE LA PARTIE !"
+    # Affichage des règles du jeu
+    # Tant que le nombre de rounds gagnés par le joueur ET que le nombre de rounds gagnés par l'ordinateur sont infèrieur au nombre de rounds voulu pour la victoire
+        # Alors on ajoute 1 a au nombre du round
+        # On affiche le numéro du round
+        # Tant que le nombre de points du joueur ET que le nombre de points de l'ordinateur sont infèrieur au nombre de points voulu pour gagner un round
+            # Alors on demande au joueur quel coup il veut jouer
+            # Tant que le joueur ne donne pas de coup valable
+                # Alors on considère son coup comme valable
+                # Si le joueur joue "Pierre" ou "pierre"
+                    # Alors on définie l'ID du coup du joueur à 0
+                # Si le joueur joue "Feuille" ou "feuille"
+                    # Alors on définie l'ID du coup du joueur à 1
+                # Si le joueur joue "Ciseaux" ou "ciseaux"
+                    # Alors on définie l'ID du coup du joueur à 2
+                # Sinon
+                    # Alors on affiche un message d'erreur
+                    # On demande au joueur de rejouer
+                    # On considère que son coup n'est pas valable
+            # On définie une fonction randint qui prend comme argument un entier minimal et un entier maximal et qui renvoie un entier aléatoire compris entre les deux
+            # On appel la fonction randint avec 0 et 2 en argument qui correspond à l'ID du coup de l'ordinateur
+            # Si l'ID du coup de l'ordinateur est 0
+                # On affiche que l'ordinateur a jouer Pierre
+                # Si l'ID du coup du joueur est 0
+                    # Alors on affiche que personne ne gagne de points
+                # Si l'ID du coup du joueur est 1
+                    # Alors on affiche que le joueur gagne un point
+                    # On ajoute 1 au compteur de points du joueur
+                # Si l'ID du coup du joueur est 2
+                    # Alors on affiche que l'ordinateur gagne un point
+                    # On ajoute 1 au compteur de point de l'ordinateur
+            # Si l'ID du coup de l'ordinateur est 1
+                # On affiche que l'ordianteur à jouer Feuille
+                # Si l'ID du coup du joueur est 0
+                    # Alors on affiche que l'ordinateur gagne un point
+                    # On ajoute 1 au compteur de point de l'ordinateur
+                # Si l'ID du coup du joueur est 1
+                    # Alors on affiche que personne ne gagne de points
+                # Si l'ID du coup du joueur est 2
+                    # Alors on affiche que le joueur gagne un point
+                    # On ajoute 1 au compteur de points du joueur
+            # Si l'ID du coup de l'ordinateur est 2
+                # On affiche que l'ordianteur à jouer Ciseaux
+                # Si l'ID du coup du joueur est 0
+                    # Alors on affiche que le joueur gagne un point
+                    # On ajoute 1 au compteur de points du joueur
+                # Si l'ID du coup du joueur est 1
+                    # Alors on affiche que l'ordinateur gagne un point
+                    # On ajoute 1 au compteur de point de l'ordinateur
+                # Si l'ID du coup du joueur est 2
+                    # Alors on affiche que personne ne gagne de points
+            # On affiche le score actuel du round dans lequel on se trouve
+            # On definie que le coup du joueur n'est plus valable et donc faux
+        # Si le joueur a autant de point que necessaire pour gagner un round
+            # Alors on ajoute 1 au compteur de round gagné du joueur
+            # On affiche un message de félicitations
+        # Sinon
+            # Alors on ajoute 1 au compteur de round gagné de l'ordinateur
+            # On affiche un message de "dommage"
+        # On réinitialise les points du joueur et de l'ordinateur à 0
+        # On affiche le nombre de rounds gagné par le joueur et par l'ordinateur
+    # Si le joueur a gagné autant de rounds que necessaire pour gagner la partie
+        # Alors on affiche un message de félicitations
+        # On initialise le gagnant de la partie à "joueur"
+    # Sinon
+        # Alors on affiche un message de "dommage"
+        # On initialise le gagnant de la partie à "ordianteur"
+    # On affiche un message de fin de partie
+    # On retourne le gagnant
