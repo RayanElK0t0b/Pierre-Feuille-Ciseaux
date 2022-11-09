@@ -228,12 +228,16 @@ print("Oui ! Le caracter mystère est : " + caractereGuess)
 
 # Concaténation 
 
+# Informations de la personne concernée
 prenom = "Rayouyou"
 nom = "Chad"
 age = 23
 
+# Affichage de son prénom et de son nom sans un espace
 print(prenom+nom)
+# Affichage de son prénom et de son nom avec un espace
 print(prenom+""+nom)
+# Affichage du prénom, du nom et de l'âge avec des espaces
 print(prenom+""+nom+""+str(age))
 
 # Exercice Tableau / Listes
@@ -249,9 +253,13 @@ len(tablo) # Renvoie le nombre d'éléments qu'il y a dans le tableau
 
 # Tableau dans un tableau
 
+# Tableau avec plusieur type de données
 tableauMultiType = ["RayouyouChad", True, tablo, 4>2, None]
+# Tableau Unidimensionnel
 tableauDimUn = [0, 1, 2, 3]
+# Tableau Unidimensionnel
 tableauDimDeux = [0, 1, 21, 3]
+# Tableau Bidimensionel
 tableauMultiDim = [tableauDimUn, tableauDimDeux]
 tableauMultiDim[1][2] # Renvoie 21
 
