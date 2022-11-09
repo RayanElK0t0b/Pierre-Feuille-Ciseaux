@@ -1,0 +1,26 @@
+# PSEUDO CODE DU PIERRE FEUILLE CISEAUX 
+
+# Définition d'une fonction pierreFeuilleCiseaux qui prend en paramètre le nombre de round a gagner (totalRound) par joueur par partie et le nombre de points nécessaires pour 
+# gagner un round (totalPoints) 
+    # Initialisation du compteur de rounds gagné du joueur 1 (roundsJoueurUn) à 0
+    # Initialisation du compteur de rounds gagné du joueur 2 (roundsJoueurDeux) à 0
+    # Initialisation du compteur de points du joueur 1 (pointsJoueurUn) à 0
+    # Initialisation du compteur de points du joueur 2 (pointsJoueurDeux) à 0
+    # Initialisation du compteur de rounds de la partie (roundNumber) à 0
+    # Création d'un int correspondant à l'ID du coup joué par le joueur (coupJoueurID)
+    # Affichage du message "DÉBUT DE LA PARTIE"
+    # Saut d'une ligne
+    # Tant que les compteurs de rounds du joueur 1 (roundsJoueurUn) ET du joueur 2 (roundsJoueurDeux) sont infèrieurs aux nombres de rounds necessaires pour gagner 
+    la partie (totalRound)
+        # Alors ajout de 1 round au compteur de rounds de la partie (roundNumber)
+        # Concatenation et affichage de "ROUND " et du compteur de rounds de la partie (roundNumber) qu'on converti en str
+        # Saut d'une ligne
+        # Tant que les compteurs de points du joueur 1 (pointsJoueurUn) ET du joueur 2 (pointsJoueurDeux) sont infèrieurs aux nombres de points necessaires pour 
+        # gagner un round (totalPoints)
+            # Affichage du message "Quel coup voulez-vous jouer : Pierre, Feuille ou Ciseaux ?"
+            # Demande au joueur et affichage du message "Votre coup : "
+            # Si le joueur joue "Pierre"
+                # Alors l'ID du coup joué par le joueur (coupJoueurID) vaut 0 
+
+
+    
