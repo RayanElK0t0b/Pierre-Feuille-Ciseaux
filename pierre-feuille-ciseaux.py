@@ -55,6 +55,30 @@ def pierreFeuilleCiseaux(totalRounds, totalPoints):
                 elif coupJoueur == "Ciseaux" or coupJoueur == "ciseaux":
                     # Alors on définie l'ID du coup du joueur à 2
                     coupJoueurID = 2
+                # Si le joueur rentre "Exit" ou "exit"
+                elif coupJoueur == "Exit" or coupJoueur == "exit":
+                    # Tant que le joueur ne répond pas "Oui", "oui", "Non" ou "non"
+                    while coupJoueur != "Oui" and coupJoueur != "oui" and coupJoueur != "Non" and coupJoueur != "non":
+                        # Alors on demande au joueur s'il veut quitter la partie
+                        coupJoueur = input("Voulez vous quitter la partie ? : ")
+                        # Alors si le joueur rentre "Oui" ou "oui"
+                        if coupJoueur == "Oui" or coupJoueur == "oui":
+                            # Alors afficher un message de fin de partie
+                            print("Fin de la partie, vous avez quitté")
+                            # La fonction ne retourne rien
+                            return
+                        # Si le joueur rentre "Non" ou "non"
+                        elif coupJoueur == "Non" or coupJoueur == "non":
+                            # On affiche un message qui indique que la partie reprend
+                            print("La partie reprend !")
+                        # Sinon 
+                        else:
+                            # Alors on affiche un message d'erreur
+                            print("Vous devez répondre par oui ou par non !")
+                    # On demande au joueur de rejouer
+                    coupJoueur = input("Votre coup : ")
+                    # Le coup du joueur est non valable
+                    coupValable = False
                 # Sinon
                 else:
                     # Alors on affiche un message d'erreur

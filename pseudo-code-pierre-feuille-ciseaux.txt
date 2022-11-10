@@ -1,78 +1,97 @@
 # PSEUDO CODE PIERRE FEUILLE CISEAUX
-
-# On définie une fonction pierreFeuilleCiseaux qui prend en paramètre le nombre de rounds voulu pour la victoire ainsi que le nombre de points voulu pour gagner un round
-    # On initialise le nombre de rounds gagnés par le joueur à 0
-    # On initialise le nombre de rounds gagnés par l'ordinateur à 0
-    # On initialise le nombre de points du joueur à 0
-    # On initialise le nombre de points de l'ordinateur à 0
-    # On initialise le numéro du round à 0
-    # On définie un booléan qui nous dis si le coup du joueur est valable ou non, le joueur n'ayant pas encore jouer, il est faux
-    # Affichage du message "DÉBUT DE LA PARTIE !"
+# DÉBUT
+# On définie une fonction pierreFeuilleCiseaux qui prend en paramètre totalRounds (nombre de rounds voulu pour la victoire) et totalPoints (le nombre de points voulu pour gagner un round)
+    # On import random (la librairie qui servira a déterminer le coup de l'ordinateur)
+    # On initialise la variable roundsJoueur (nombre de rounds gagné par le joueur) à 0
+    # On initialise la variable roundsOrdinateur (nombre de rounds gagné par l'ordinateur) à 0
+    # On initialise la variable pointsJoueur (nombre de points du joueur) à 0
+    # On initialise la variable pointsOrdinateur (nombre de points de l'ordinateur) à 0
+    # On initialise la variable roundNumber (numéro du round actuel) à 0
+    # On initialise la variable coupJoueurID (ID du coup joué par le joueur) à 0
+    # On initialise le booléan coupValable (vérifie si le coup rentré par le joueur est valable ou non) à False
+    # Affichage d'un message de début de partie
     # Affichage des règles du jeu
-    # Tant que le nombre de rounds gagnés par le joueur ET que le nombre de rounds gagnés par l'ordinateur sont infèrieur au nombre de rounds voulu pour la victoire
-        # Alors on ajoute 1 a au nombre du round
-        # On affiche le numéro du round
-        # Tant que le nombre de points du joueur ET que le nombre de points de l'ordinateur sont infèrieur au nombre de points voulu pour gagner un round
-            # Alors on demande au joueur quel coup il veut jouer
-            # Tant que le joueur ne donne pas de coup valable
-                # Alors on considère son coup comme valable
-                # Si le joueur joue "Pierre" ou "pierre"
-                    # Alors on définie l'ID du coup du joueur à 0
-                # Si le joueur joue "Feuille" ou "feuille"
-                    # Alors on définie l'ID du coup du joueur à 1
-                # Si le joueur joue "Ciseaux" ou "ciseaux"
-                    # Alors on définie l'ID du coup du joueur à 2
+    # Tant que roundsJoueur < totalRounds et que roundsOrdinateur < totalRounds (tant que ni le joueur ni l'ordinateur n'a gagné la partie)
+        # Alors on ajoute 1 à roundNumber (on passe au round suivant)
+        # On affiche un message qui indique a quel round on est
+        # Tant que pointsJoueur < totalPoints et que pointsOrdinateur < totalPoints (tant que ni le joueur ni l'ordinateur n'a gagné le round)
+            # Alors le joueur initialise la variable coupJoueur (coup actuel du joueur) avec la fonction input (on demande au joueur quel coup il veut jouer)
+            # Tant que coupValable == False (Tant que le coup du joueur n'est pas valable)
+                # Alors on set coupValable à True (On considère que le coup du joueur est valable)
+                # Si coupJoueur == "Pierre" ou que coupJoueur == "pierre" (si le joueur joue pierre)
+                    # Alors coupJoueurID = 0 (On définie l'ID du coup à 0)
+                # Si coupJoueur == "Feuille" ou que coupJoueur == "feuille" (si le joueur joue feuille)
+                    # Alors coupJoueurID = 1 (On définie l'ID du coup à 1)
+                # Si coupJoueur == "Ciseaux" ou que coupJoueur == "ciseaux" (si le joueur joue ciseaux)
+                    # Alors coupJoueurID = 2 (On définie l'ID du coup à 2)
+                # Si coupJoueur == "Exit" ou que coupJoueur == "exit" (si le joueur veut quitter la partie)
+                    # Tant que coupJoueur != "Oui" et que coupJoueur != "oui" et que coupJoueur != "Non" et que coupJoueur != "non" (tant que le joueur ne répond pas par oui ou par non)
+                        # Alors le joueur décide de la valeur de coupJoueur avec coupJoueur = input("Voulez-vous quitter la partie ? : ") (On demande au joueur si il veut quitter la partie)
+                        # Si coupJoueur == "Oui" ou que coupJoueur == "oui" (Si le joueur répond par oui)
+                            # Alors afficher un message de fin de partie
+                            # On ne return rien (On termine la partie)
+                        # Si coupJoueur == "Non" ou que coupJoueur == "non" (Si le joueur répond par non)
+                            # On affiche un message qui indique que la partie reprend
+                        # Sinon 
+                            # Alors on affiche un message d'erreur qui demande au joueur de répondre par "Oui" ou par "Non"
+                    # Le joueur set la valeur de coupJoueur avec coupJoueur = input("Votre coup : ") (Le joueur rejoue)
+                    # On set coupValable = False (Le coup du joueur n'est pas valable)
                 # Sinon
                     # Alors on affiche un message d'erreur
-                    # On demande au joueur de rejouer
-                    # On considère que son coup n'est pas valable
-            # On définie une fonction randint qui prend comme argument un entier minimal et un entier maximal et qui renvoie un entier aléatoire compris entre les deux
-            # On appel la fonction randint avec 0 et 2 en argument qui correspond à l'ID du coup de l'ordinateur
-            # Si l'ID du coup de l'ordinateur est 0
-                # On affiche que l'ordinateur a jouer Pierre
-                # Si l'ID du coup du joueur est 0
+                    # Le joueur set la valeur de coupJoueur avec coupJoueur = input("Votre coup : ") (Le joueur rejoue)
+                    # On set coupValable = False (Le coup du joueur n'est pas valable)
+            # On set la variable coupOrdiID = random.randint(0,2) (On choisi un coup aléatoire pour l'ordinateur)
+            # Si coupOrdiID == 0 (Si l'ordinateur joue Pierre)
+                # On affiche que l'ordinateur à joué Pierre
+                # Si coupJoueurID == 0 (Si le joueur a joué Pierre)
                     # Alors on affiche que personne ne gagne de points
-                # Si l'ID du coup du joueur est 1
+                # Si coupJoueurID == 1 (Si le joueur a joué Feuille)
                     # Alors on affiche que le joueur gagne un point
-                    # On ajoute 1 au compteur de points du joueur
-                # Si l'ID du coup du joueur est 2
+                    # On ajoute 1 à pointsJoueur (Le joueur gagne 1 point)
+                # Si coupJoueurID == 2 (Si le joueur a joué Ciseaux)
                     # Alors on affiche que l'ordinateur gagne un point
-                    # On ajoute 1 au compteur de point de l'ordinateur
-            # Si l'ID du coup de l'ordinateur est 1
-                # On affiche que l'ordianteur à jouer Feuille
-                # Si l'ID du coup du joueur est 0
+                    # On ajoute 1 à pointsOrdinateur (L'ordianteur gagne 1 point)
+            # Si coupOrdiID == 1 (Si l'ordinateur joue Feuille)
+                # On affiche que l'ordianteur à joué Feuille
+                # Si coupJoueurID == 0 (Si le joueur a joué Pierre)
                     # Alors on affiche que l'ordinateur gagne un point
-                    # On ajoute 1 au compteur de point de l'ordinateur
-                # Si l'ID du coup du joueur est 1
+                    # On ajoute 1 à pointsOrdinateur (L'ordianteur gagne 1 point)
+                # Si coupJoueurID == 1 (Si le joueur a joué Feuille)
                     # Alors on affiche que personne ne gagne de points
-                # Si l'ID du coup du joueur est 2
+                # Si coupJoueurID == 2 (Si le joueur a joué Ciseaux)
                     # Alors on affiche que le joueur gagne un point
-                    # On ajoute 1 au compteur de points du joueur
-            # Si l'ID du coup de l'ordinateur est 2
-                # On affiche que l'ordianteur à jouer Ciseaux
-                # Si l'ID du coup du joueur est 0
+                    # On ajoute 1 à pointsJoueur (Le joueur gagne 1 point)
+            # Si coupOrdiID == 2 (Si l'ordinateur joue Ciseaux)
+                # On affiche que l'ordianteur à joué Ciseaux
+                # Si coupJoueurID == 0 (Si le joueur a joué Pierre)
                     # Alors on affiche que le joueur gagne un point
-                    # On ajoute 1 au compteur de points du joueur
-                # Si l'ID du coup du joueur est 1
+                    # On ajoute 1 à pointsJoueur (Le joueur gagne 1 point)
+                # Si coupJoueurID == 1 (Si le joueur a joué Feuille)
                     # Alors on affiche que l'ordinateur gagne un point
-                    # On ajoute 1 au compteur de point de l'ordinateur
-                # Si l'ID du coup du joueur est 2
+                    # On ajoute 1 à pointsOrdinateur (L'ordianteur gagne 1 point)
+                # Si coupJoueurID == 2 (Si le joueur a joué Ciseaux)
                     # Alors on affiche que personne ne gagne de points
-            # On affiche le score actuel du round dans lequel on se trouve
-            # On definie que le coup du joueur n'est plus valable et donc faux
-        # Si le joueur a autant de point que necessaire pour gagner un round
-            # Alors on ajoute 1 au compteur de round gagné du joueur
+            # On print pointsOrdinateur et pointsJoueur (On affiche le score actuel du round dans lequel on se trouve)
+            # On set coupValable = False (On definie que le coup du joueur n'est plus valable et donc faux)
+        # Si pointsJoueur == totalPoints (Si le joueur a autant de point que necessaire pour gagner un round)
+            # Alors on ajoute 1 à roundsJoueur (Le joueur gagne un round)
             # On affiche un message de félicitations
         # Sinon
-            # Alors on ajoute 1 au compteur de round gagné de l'ordinateur
+            # Alors on ajoute 1 à roundsOrdinateur (L'ordinateur gagne un round)
             # On affiche un message de "dommage"
-        # On réinitialise les points du joueur et de l'ordinateur à 0
-        # On affiche le nombre de rounds gagné par le joueur et par l'ordinateur
-    # Si le joueur a gagné autant de rounds que necessaire pour gagner la partie
+        # On set roundsJoueur = roundsOrdinateur = 0 (on réinitialise les points du joueur et de l'ordinateur à 0)
+        # On print roundsOrdinateur et roundsJoueur (On affiche le nombre de rounds gagnés par le joueur et l'ordinateur)
+    # Si roundsJoueur == totalRounds (Si le joueur a gagné autant de rounds que necessaire pour gagner la partie)
         # Alors on affiche un message de félicitations
-        # On initialise le gagnant de la partie à "joueur"
+        # On initialise le string winner à "Joueur" (Le joueur est le gagnant)
     # Sinon
         # Alors on affiche un message de "dommage"
-        # On initialise le gagnant de la partie à "ordianteur"
+        # On initialise le string winner à "Ordinateur" (Le joueur est le gagnant)
     # On affiche un message de fin de partie
-    # On retourne le gagnant
+    # On return winner (La fonction retourne le gagnant)
+
+# nbRoundsVoulu = x
+# nbPointsVoulu = y
+# pierreFeuilleCiseaux(x,y)
+
+# FIN
