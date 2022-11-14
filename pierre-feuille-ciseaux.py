@@ -65,6 +65,8 @@ def pierreFeuilleCiseaux(totalRounds, totalPoints):
                         if coupJoueur == "Oui" or coupJoueur == "oui":
                             # Alors afficher un message de fin de partie
                             print("Fin de la partie, vous avez quitté")
+                            # Saut d'une ligne
+                            print()
                             # La fonction ne retourne rien
                             return
                         # Si le joueur rentre "Non" ou "non"
