@@ -73,7 +73,7 @@ def pierreFeuilleCiseaux(totalRounds, totalPoints):
                         elif coupJoueur == "Non" or coupJoueur == "non":
                             # On affiche un message qui indique que la partie reprend
                             print("La partie reprend !")
-                        # Sinon 
+                        # Sinon
                         else:
                             # Alors on affiche un message d'erreur
                             print("Vous devez répondre par oui ou par non !")
@@ -93,64 +93,34 @@ def pierreFeuilleCiseaux(totalRounds, totalPoints):
             coupOrdiID = random.randint(0,2)
             # Si l'ID du coup de l'ordinateur est 0
             if coupOrdiID == 0:
-                # On affiche que l'ordinateur a jouer Pierre
-                print("L'ordinateur a joué Pierre")
-                # Si l'ID du coup du joueur est 0
-                if coupJoueurID == 0:
-                    # Alors on affiche que personne ne gagne de points
-                    print("Personne ne gagne de point.")
-                # Si l'ID du coup du joueur est 1
-                elif coupJoueurID == 1:
-                    # Alors on affiche que le joueur gagne un point
-                    print("Vous gagnez 1 point!")
-                    # On ajoute 1 au compteur de points du joueur
-                    pointsJoueur += 1
-                # Si l'ID du coup du joueur est 2
-                elif coupJoueurID == 2:
-                    # Alors on affiche que l'ordinateur gagne un point
-                    print("L'ordinateur gagne 1 point.")
-                    # On ajoute 1 au compteur de point de l'ordinateur
-                    pointsOrdinateur += 1
+                # ALors son coup est pierre
+                coupOrdi = "Pierre"
             # Si l'ID du coup de l'ordinateur est 1
             elif coupOrdiID == 1:
-                # On affiche que l'ordianteur à jouer Feuille
-                print("L'ordinateur a joué Feuille")
-                # Si l'ID du coup du joueur est 0
-                if coupJoueurID == 0:
-                    # Alors on affiche que l'ordinateur gagne un point
-                    print("L'ordinateur gagne 1 point.")
-                    # On ajoute 1 au compteur de point de l'ordinateur
-                    pointsOrdinateur += 1
-                # Si l'ID du coup du joueur est 1
-                elif coupJoueurID == 1:
-                    # Alors on affiche que personne ne gagne de points
-                    print("Personne ne gagne de point.")
-                # Si l'ID du coup du joueur est 2
-                elif coupJoueurID == 2:
-                    # Alors on affiche que le joueur gagne un point
-                    print("Vous gagnez 1 point !")
-                    # On ajoute 1 au compteur de points du joueur
-                    pointsJoueur += 1
-            # Si l'ID du coup de l'ordinateur est 2
-            elif coupOrdiID == 2:
-                # On affiche que l'ordianteur à jouer Ciseaux
-                print("L'ordinateur a joué Ciseaux")
-                # Si l'ID du coup du joueur est 0
-                if coupJoueurID == 0:
-                    # Alors on affiche que le joueur gagne un point
-                    print("Vous gagnez 1 point !")
-                    # On ajoute 1 au compteur de points du joueur
-                    pointsJoueur += 1
-                # Si l'ID du coup du joueur est 1
-                elif coupJoueurID == 1:
-                    # Alors on affiche que l'ordinateur gagne un point
-                    print("L'ordinateur gagne 1 point.")
-                    # On ajoute 1 au compteur de point de l'ordinateur
-                    pointsOrdinateur += 1
-                # Si l'ID du coup du joueur est 2
-                elif coupJoueurID == 2:
-                    # Alors on affiche que personne ne gagne de points
-                    print("Personne ne gagne de points.")
+                # ALors son coup est feuille
+                coupOrdi = "Feuille"
+            # Sinon (si l'ID du coup de l'ordinateur est 2)
+            else:
+                # ALors son coup est ciseaux
+                coupOrdi = "Ciseaux"
+            # Affichage du coup joué par l'ordinateur
+            print("L'ordinateur à joué "+str(coupOrdi))
+            # Si il y'a égalité
+            if (coupOrdiID == 0 and coupJoueurID == 0) or (coupOrdiID == 1 and coupJoueurID == 1) or (coupOrdiID == 2 and coupJoueurID == 2):
+                # Alors on affiche que personne ne gagne de points
+                print("Personne ne gagne de point.")
+            # Si le joueur a gagné
+            elif (coupOrdiID == 0 and coupJoueurID == 1) or (coupOrdiID == 1 and coupJoueurID == 2) or (coupOrdiID == 2 and coupJoueurID == 0):
+                # Alors on affiche que le joueur gagne un point
+                print("Vous gagnez 1 point !")
+                # On ajoute 1 au compteur de points du joueur
+                pointsJoueur += 1
+            # Si l'ordinateur gagne
+            elif (coupOrdiID == 0 and coupJoueurID == 1) or (coupOrdiID == 1 and coupJoueurID == 2) or (coupOrdiID == 2 and coupJoueurID == 0):
+                # On affiche que l'ordinateur a gagné
+                print("L'ordinateur gagne 1 point.")
+                # On ajoute 1 au compteur de point de l'ordinateur
+                pointsOrdinateur += 1
             # On affiche le score actuel du round dans lequel on se trouve
             print("Score : Ordinateur "+str(pointsOrdinateur)+" - "+str(pointsJoueur)+" Joueur")
             # Saut d'une ligne
